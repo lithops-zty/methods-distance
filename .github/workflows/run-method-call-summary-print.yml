@@ -38,10 +38,6 @@ jobs:
           java-version: 21
           distribution: 'temurin'
 
-      - name: Checkout methods-distance repo
-        run: |
-          git clone https://github.com/sevntu-checkstyle/methods-distance.git
-
       - name: Build project with Maven
         run: |
           cd methods-distance
@@ -68,10 +64,10 @@ jobs:
           fi
           
           echo ""
-          cd "methods-distance/methods-distance"
+          cd "methods-distance"
           
           JAR=(target/methods-distance-*-with-dependencies.jar)
-          java -cp "${JAR[0]}" com.github.sevntu.checkstyle.JsonCli "../../Test.java" "../.."
+          java -cp "${JAR[0]}" com.github.sevntu.checkstyle.JsonCli "../Test.java" ".."
 
       - name: Configure Python for table printing
         run: |
