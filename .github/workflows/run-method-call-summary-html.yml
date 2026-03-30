@@ -134,6 +134,7 @@ jobs:
         with:
           name: method-call-summary-report-dot
           path: reports/call-graph.dot
+          archive: false
 
       - name: Upload multiple reports (bundled) html
         if: steps.count.outputs.count != '1'
@@ -141,3 +142,4 @@ jobs:
         with:
           name: method-call-summary-report-html
           path: reports/dsm-report.html
+          archive: false
