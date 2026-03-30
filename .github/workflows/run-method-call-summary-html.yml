@@ -128,9 +128,16 @@ jobs:
           path: reports/
           archive: false
 
-      - name: Upload multiple reports (bundled)
+      - name: Upload multiple reports (bundled) dot
         if: steps.count.outputs.count != '1'
         uses: actions/upload-artifact@v7
         with:
           name: method-call-summary-report
-          path: reports/
+          path: reports/call-graph.dot
+
+      - name: Upload multiple reports (bundled) html
+        if: steps.count.outputs.count != '1'
+        uses: actions/upload-artifact@v7
+        with:
+          name: method-call-summary-report
+          path: reports/dsm-report.html
