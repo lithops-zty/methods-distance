@@ -132,12 +132,12 @@ jobs:
         if: steps.count.outputs.count != '1'
         uses: actions/upload-artifact@v7
         with:
-          name: method-call-summary-report
+          name: method-call-summary-report-dot
           path: reports/call-graph.dot
 
       - name: Upload multiple reports (bundled) html
         if: steps.count.outputs.count != '1'
         uses: actions/upload-artifact@v7
         with:
-          name: method-call-summary-report
+          name: method-call-summary-report-html
           path: reports/dsm-report.html
